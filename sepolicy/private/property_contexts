@@ -7,3 +7,6 @@ persist.device_config.tethering.        u:object_r:device_config_tethering_prop:
 # Keystore compatibility
 sys.keystore_compat.                   u:object_r:keystore_compat_prop:s0
 sys.tee_simulator.                     u:object_r:keystore_compat_prop:s0
+
+# USB
+ro.usb.uvc.disable_video_encode_flag   u:object_r:usb_uvc_config_prop:s0
