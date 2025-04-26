@@ -6,3 +6,6 @@ system_internal_prop(device_config_tethering_prop)
 
 # Luminous
 system_public_prop(penguin_luminous_prop)
+
+# USB
+system_vendor_config_prop(usb_uvc_config_prop)
