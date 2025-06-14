@@ -9,5 +9,8 @@ sys.keystore_compat.                   u:object_r:keystore_compat_prop:s0
 sys.tee_simulator.                     u:object_r:keystore_compat_prop:s0
 persist.sys.penguin.luminous         u:object_r:penguin_luminous_prop:s0 exact int
 
+# Lid
+persist.debug.disable_lid_state         u:object_r:lid_disable_prop:s0
+
 # USB
 ro.usb.uvc.disable_video_encode_flag   u:object_r:usb_uvc_config_prop:s0

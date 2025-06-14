@@ -57,3 +57,6 @@ get_prop(system_server, pih_disable_prop)
 
 # Luminous
 get_prop(system_server, penguin_luminous_prop)
+
+# Lid
+get_prop(system_server, lid_disable_prop)
