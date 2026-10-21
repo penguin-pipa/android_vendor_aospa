@@ -273,10 +273,11 @@ def main():
         ]
 
     # A removed ingredient's upstream project may not be in this checkout at all, and repo
-    # refuses to sync the whole list over one unknown path.
+    # refuses to sync the whole list over one unknown path. --all keeps projects that
+    # are in the manifest but not checked out yet, which are exactly the ones to brew.
     if brewable_projects and not skip_sync:
         known = subprocess.run(
-            ["repo", "list", "--path-only"], capture_output=True, text=True
+            ["repo", "list", "--path-only", "--all"], capture_output=True, text=True
         ).stdout.split()
         if known:
             brewable_projects = [path for path in brewable_projects if path in known]
