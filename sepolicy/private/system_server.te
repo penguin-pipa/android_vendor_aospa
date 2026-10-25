@@ -54,3 +54,5 @@ get_prop(system_server, keystore_compat_prop)
 
 # Play Integrity hooks
 get_prop(system_server, pih_disable_prop)
+
+get_prop(system_server, lid_disable_prop)
