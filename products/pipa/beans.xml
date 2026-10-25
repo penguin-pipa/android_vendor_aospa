@@ -14,6 +14,8 @@
 
   <project path="kernel/configs" name="aospa-pipa/android_kernel_configs" remote="github" revision="calcite" />
 
+  <project path="packages/apps/FlipFlap" name="aospa-pipa/android_packages_apps_FlipFlap" remote="github" revision="calcite" />
+
   <project path="device/qcom/common" name="aospa-pipa/android_device_qcom_common" remote="github" revision="calcite">
     <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk" />
   </project>
