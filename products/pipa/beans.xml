@@ -15,7 +15,7 @@
 
   <project path="kernel/configs" name="aospa-pipa/android_kernel_configs" remote="github" revision="calcite" />
 
-  <project path="device/qcom/common" name="aospa-pipa/android_device_qcom_common" remote="github" revision="calcite">
+  <project path="device/qcom/common" name="penguin-pipa/device_qcom_common" remote="github" revision="celerity">
     <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk" />
   </project>
   <project path="device/qcom/sepolicy_vndr" name="aospa-pipa/android_device_qcom_sepolicy_vndr" remote="github" revision="calcite" />
