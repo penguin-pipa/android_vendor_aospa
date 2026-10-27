@@ -19,9 +19,10 @@ endif
 
 # Use the Clang version requested by the device, if any. Consumed by
 # vendor/qcom/build/tasks/kernel_definitions.mk via KERNEL_CUSTOM_LLVM.
+# Devices give the bare revision (r596125), the prebuilt dirs are clang-<rev>.
 ifneq ($(strip $(KERNEL_CLANG_VERSION)),)
 KERNEL_CUSTOM_LLVM ?= true
-KERNEL_CUSTOM_LLVM_PATH ?= $(shell pwd)/prebuilts/clang/host/linux-x86/$(KERNEL_CLANG_VERSION)
+KERNEL_CUSTOM_LLVM_PATH ?= $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(KERNEL_CLANG_VERSION)
 ifeq ($(wildcard $(KERNEL_CUSTOM_LLVM_PATH)/bin/clang),)
 $(warning KERNEL_CLANG_VERSION=$(KERNEL_CLANG_VERSION) but clang is missing under $(KERNEL_CUSTOM_LLVM_PATH))
 endif
