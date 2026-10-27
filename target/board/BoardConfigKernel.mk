@@ -17,6 +17,16 @@ ifeq ($(KERNEL_NEW_GCC_SUPPORT),true)
     KERNEL_LLVM_SUPPORT := false
 endif
 
+# Use the Clang version requested by the device, if any. Consumed by
+# vendor/qcom/build/tasks/kernel_definitions.mk via KERNEL_CUSTOM_LLVM.
+ifneq ($(strip $(KERNEL_CLANG_VERSION)),)
+KERNEL_CUSTOM_LLVM ?= true
+KERNEL_CUSTOM_LLVM_PATH ?= $(shell pwd)/prebuilts/clang/host/linux-x86/$(KERNEL_CLANG_VERSION)
+ifeq ($(wildcard $(KERNEL_CUSTOM_LLVM_PATH)/bin/clang),)
+$(warning KERNEL_CLANG_VERSION=$(KERNEL_CLANG_VERSION) but clang is missing under $(KERNEL_CUSTOM_LLVM_PATH))
+endif
+endif
+
 # Enable SDLLVM Support.
 ifneq (,$(filter 3.18 4.4 4.9, $(TARGET_KERNEL_VERSION)))
 KERNEL_SD_LLVM_SUPPORT ?= true
